@@ -110,7 +110,7 @@ function VehiculoGasto() {
     return (
         <AdminLayout>
             <>
-                <h1>Parentescos</h1>
+                <h1>Gastos del vehiculo</h1>
                 <div className="mb-3">
                     Formulario : <h1>{title}</h1>
                     <Form onSubmit={guardarVehiculoGasto}>
@@ -127,7 +127,7 @@ function VehiculoGasto() {
                         </Form.Group>
 
                         <Form.Group className="mb-3">
-                            <Form.Label>Seleccione una opción:</Form.Label>
+                            <Form.Label>Seleccione un auto:</Form.Label>
                             <Form.Control
                                 as="select"
                                 value={vehiculoId}
@@ -136,13 +136,16 @@ function VehiculoGasto() {
                                 <option value="">Seleccionar opción</option>
                                 {vehiculo.map((option) => (
                                     <option key={option.id} value={option.id}>
-                                        {option.marca}
+                                        {option.modelo}
+                                        {/* 
+                                            Modificado de marca a modelo
+                                        */}
                                     </option>
                                 ))}
                             </Form.Control>
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label>Seleccione una opción:</Form.Label>
+                            <Form.Label>Seleccione un tipo de gasto:</Form.Label>
                             <Form.Control
                                 as="select"
                                 value={tipoGastoId}
