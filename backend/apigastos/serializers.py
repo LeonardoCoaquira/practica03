@@ -15,3 +15,8 @@ class VehiculoGastoSerializer(serializers.ModelSerializer):
     class Meta:
         model = VehiculoGasto
         fields = '__all__'
+    def to_representation(self,instance):
+        representation = super().to_representation(instance)
+        representation['vehiculo'] = instance.vehiculo.marca
+        representation['tipo_gasto'] = instance.tipo_gasto.nombre
+        return representation
